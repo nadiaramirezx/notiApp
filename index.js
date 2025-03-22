@@ -12,11 +12,8 @@ const SECRET_KEY = process.env.JWT_SECRET || "supersecreto";
 
 // Datos falsos de usuario
 const USER_FAKE = {
-  name: "Juan",
-  lastName: "Perez",
-  username: "juan",
+  email: "gael@gmail.com",
   password: "pass123",
-  email: "juan@email.com",
 };
 
 // Ruta pública
@@ -26,10 +23,10 @@ app.get("/", (req, res) => {
 
 // Endpoint de login
 app.post("/auth", (req, res) => {
-  const { username, password } = req.body;
+  const { email, password } = req.body;
     console.log(req.body);
   // Validación contra datos falsos
-  if (username !== USER_FAKE.username || password !== USER_FAKE.password) {
+  if (email !=  USER_FAKE.email && password != USER_FAKE.password) {
     return res.status(401).json({ message: "Credenciales incorrectas" });
   }
 
@@ -39,10 +36,7 @@ app.post("/auth", (req, res) => {
   });
 
   const dataResponse = {
-    name: USER_FAKE.name,
-    lastName: USER_FAKE.lastName,
-    user: USER_FAKE.username,
-    email: username + "@gmail.com",
+    user: USER_FAKE.email,
     token,
   };
 
