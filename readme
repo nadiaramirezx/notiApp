@@ -6,7 +6,7 @@ http://localhost:3000/auth
 En caso de trabajar en global, ejecutar el siguiente comando:
 ngrok http 3000
 
-Usar la siguiente estructura para la respuesta:
+Usar la siguiente estructura para obtener una respuesta válida desde la API:
 {
   "email": "gael@gmail.com",
   "password": "pass123"
