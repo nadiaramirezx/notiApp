@@ -26,7 +26,7 @@ app.post("/auth", (req, res) => {
   const { email, password } = req.body;
     console.log(req.body);
   // Validación contra datos falsos
-  if (email !=  USER_FAKE.email && password != USER_FAKE.password) {
+  if (email !=  USER_FAKE.email || password != USER_FAKE.password) {
     return res.status(401).json({ message: "Credenciales incorrectas" });
   }
 
