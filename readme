@@ -1,0 +1,13 @@
+# Documentación
+
+En caso de que se trabaje en local, usar el siguiente enlace:
+http://localhost:3000/auth
+
+En caso de trabajar en global, ejecutar el siguiente comando:
+ngrok http 3000
+
+Usar la siguiente estructura para la respuesta:
+{
+  "email": "gael@gmail.com",
+  "password": "pass123"
+}
