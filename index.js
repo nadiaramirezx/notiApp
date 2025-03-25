@@ -12,8 +12,8 @@ const SECRET_KEY = process.env.JWT_SECRET || "supersecreto";
 
 // Datos falsos de usuario
 const USER_FAKE = {
-  email: "gael@gmail.com",
-  password: "pass123",
+  email: "ramirez@gmail.com",
+  password: "pwd123",
 };
 
 // Ruta pública
@@ -25,12 +25,13 @@ app.get("/", (req, res) => {
 app.post("/auth", (req, res) => {
   const { email, password } = req.body;
     console.log(req.body);
-  // Validación contra datos falsos
+
+  // Esta es la validación de credenciales
   if (email !=  USER_FAKE.email || password != USER_FAKE.password) {
     return res.status(401).json({ message: "Credenciales incorrectas" });
   }
 
-  // Generar token JWT
+  // Generar token 
   const token = jwt.sign({ username: USER_FAKE.username }, SECRET_KEY, {
     expiresIn: "1h",
   });
@@ -40,7 +41,7 @@ app.post("/auth", (req, res) => {
     token,
   };
 
-  res.json({ message: "Inicio de sesión exitoso", data: dataResponse });
+  res.json({ message: "Login exitoso", data: dataResponse });
 });
 
 // Middleware para verificar token
