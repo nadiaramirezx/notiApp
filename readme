@@ -1,9 +1,7 @@
-# Documentación
-
-En el caso de que se deba trabajar de manera local, usar el siguiente enlace:
+trabajar de manera local, usar el siguiente enlace:
 http://localhost:3000/auth
 
-En caso de trabajar en global, ejecutar el siguiente comando:
+ trabajar de manera global, ejecutar el siguiente comando:
 ngrok http 3000
 
 Usar para obtener una respuesta válida desde la API,
